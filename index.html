@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M08</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegúrate de tener listos todos los materiales indicados en la DIAPOSITIVA 1 antes de iniciar la misión.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: Bienvenida e Introducción al Día ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Dar la bienvenida a los Genios y preparar el ambiente para el aprendizaje.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la DIAPOSITIVA 1 "Bienvenida" y saluda a los niños mientras muestras el logo de Gnius Club. Luego introduce el tema del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Hola, Genios! ¡Qué emoción verlos hoy! Hoy tenemos una misión súper especial en el Castillo de Dulces, donde ayudaremos al Rey Dulce a organizar la fiesta más dulce del año. ¡Vamos a prepararnos!</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la DIAPOSITIVA 2 "Gimnasio del CODE SQUAD" y prepara a los niños para el ejercicio de estimulación.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> Antes de ayudar al Rey Dulce, necesitamos preparar nuestros cerebros. ¡Vamos a hacer un ejercicio en el Gimnasio del CODE SQUAD! Pongan atención a las indicaciones de la canción.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('gimnasio_code_squad')">
+        <div class="title">💪 Actividad 2: Introducción al Gimnasio CODE SQUAD ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Preparar a los niños para entrenar sus cerebros antes de la misión.</div>
+    </div>
+    <div id="gimnasio_code_squad" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la DIAPOSITIVA 3 y saluda a los niños con entusiasmo. Introduce el concepto del entrenamiento cerebral antes de la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> Vamos a entrenar nuestros cerebros en el gimnasio del CODE SQUAD con una canción para estar listos para el reto que nos espera hoy en el Castillo de Dulces. ¡Pongan atención y diviértanse!</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (2 minutos):</strong> Reproduce la DIAPOSITIVA 4 y guía a los niños para que sigan las instrucciones de la canción.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> Ahora que estamos listos, ¡es hora de poner a prueba nuestro entrenamiento! Vamos a seguir las indicaciones de la canción. No se preocupen si no pueden seguir todo al principio, ¡estamos aquí para ejercitarnos y divertirnos!</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento_problema')">
+        <div class="title">🛠️ Actividad 3: Planteamiento del Problema ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Introducir el problema que los Genios deben resolver en la misión.</div>
+    </div>
+    <div id="planteamiento_problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 5, adopta una actitud de cuenta cuentos y narra la historia con entusiasmo, presentando a los personajes y el escenario.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Genios del CODE SQUAD! Hoy estamos en un lugar mágico, el Castillo de Dulces, donde el Rey Dulce necesita nuestra ayuda para organizar su Gran Fiesta de los Sabores. Los animales del bosque vienen de todas partes, pero hay un problema... ¡algunos dulces están fuera de lugar y no siguen las reglas del Rey! ¡Vamos a ayudarle a que todo esté perfecto para la fiesta!</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6 y explica el reto para el CODE SQUAD con claridad.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> El Rey Dulce necesita nuestra ayuda para organizar la mesa principal de la fiesta. ¡Solo los dulces que tienen la forma correcta pueden estar en la mesa del Rey! Pero algunos dulces están confundidos, ¡y no sabemos cuáles seguirán las reglas! Usaremos el Juego del "Sí o No" para decidir qué dulces pueden ir en la mesa. ¡Prepárense, CODE SQUAD, que la fiesta está por comenzar!</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion_parejas')">
+        <div class="title">🤝 Actividad 4: Formación de Parejas ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Formar equipos de trabajo y preparar a los estudiantes para la misión.</div>
+    </div>
+    <div id="formacion_parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 7, explica la importancia de trabajar en equipo y organiza a los niños en pares para la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Genios del CODE SQUAD! Cuando trabajamos juntos, ¡somos imparables! ¿Sabían que "Dos cabezas piensan mejor que una"? Así que para esta misión vamos a unirnos en parejas. Encuentren a un compañero y prepárense para trabajar juntos. ¡Recuerden compartir sus ideas y ayudarse entre ustedes! ¡Será súper divertido trabajar en equipo!</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> El maestro verifica que todos los niños estén emparejados y organizados para trabajar.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¿Todos tienen a su compañero? ¡Perfecto! Ahora que están listos, recuerden que trabajar en equipo significa ayudarse y compartir ideas. ¡Cuanto más colaboren, más divertida será la misión en el Castillo de Dulces!</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('explicacion_reto')">
+        <div class="title">⚙️ Actividad 5: Explicación del Reto de Codificación ⏰ Tiempo: Variable <span id="activity-5-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Explicar el reto de codificación que deberán resolver.</div>
+    </div>
+    <div id="explicacion_reto" class="content">
+        <table id="activity-5-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('construccion_bloques')">
+        <div class="title">🔧 Actividad 6: Construcción con Bloques ⏰ Tiempo: Variable <span id="activity-6-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Ensamblar bloques siguiendo los códigos generados.</div>
+    </div>
+    <div id="construccion_bloques" class="content">
+        <table id="activity-6-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('obstaculo_historia')">
+        <div class="title">⚠️ Actividad 7: Mensaje del Cuartel ⏰ Tiempo: Variable <span id="activity-7-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir un obstáculo en la narrativa para mantener el interés y la motivación.</div>
+    </div>
+    <div id="obstaculo_historia" class="content">
+        <table id="activity-7-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_reflexion')">
+        <div class="title">🎉 Actividad 8: Conclusión de la Historia y Reflexión ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Cierre de la clase y preguntas de reflexión para los Genios.</div>
+    </div>
+    <div id="conclusion_reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la DIAPOSITIVA 28, cuenta el desenlace de la historia y realiza preguntas de reflexión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Felicidades, CODE SQUAD! ¡Lo logramos! Gracias a su increíble trabajo en equipo, los dulces están perfectamente organizados para la fiesta del Rey Dulce. ¡Todos los personajes están felices y emocionados porque la fiesta será un gran éxito gracias a ustedes! Ahora, quiero hacerles algunas preguntas para que reflexionemos sobre lo que aprendimos hoy:<br><br>
+                    1. ¿Por qué fue importante seguir el código con mucho cuidado para que los dulces quedaran bien organizados?<br>
+                    2. ¿Cuáles dulces lograron organizar usando los bloques de colores?<br>
+                    3. ¿Qué fue lo más divertido o desafiante al seguir el código?</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+        var steps = {
+    "K1": {
+        "5.1": [
+            { "step": 1, "time": { "30": 1, "40": 1, "50": 1 }, "accion": "Reproduce la Diapositiva 8 y explica el reto para los niños de 3 años.", "dialogo": "¡CODE SQUAD! Para que el Rey Dulce pueda organizar su fiesta, vamos a ayudarlo a clasificar los dulces según su forma. Usaremos bloques para representar los dulces, como el cuadrado, el redondo, y el de estrella. Vamos a dibujar los dulces y les asignaremos un bloque de color, como un bloque rojo para el cuadrado, y uno azul para el redondo." },
+            { "step": 2, "time": { "30": 2, "40": 2, "50": 2 }, "accion": "Reproduce la Diapositiva 9, distribuye papel y colores para que comiencen a trabajar.", "dialogo": "Aquí tienen su papel y colores. Dibujen los dulces y asignenles un bloque de color a cada uno. ¡Prepárense para ayudar al Rey Dulce a clasificar todos los dulces!" },
+            { "step": 3, "time": { "30": 5, "40": 7, "50": 10 }, "accion": "Reproduce la Diapositiva 10, guía el proceso mientras los niños crean sus códigos visuales en parejas.", "dialogo": "¡Genios del CODE SQUAD! Dibujen los dulces y sus bloques. Cada dulce necesita un bloque de color. Trabajen juntos y ayuden al Rey Dulce a organizar su mesa de dulces. ¡Vamos a ver cuán bien pueden codificar!" }
+        ],
+        "6": [
+            { "step": 1, "time": { "30": 2, "40": 2, "50": 2 }, "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.", "dialogo": "¡Excelente trabajo, CODE SQUAD! Ahora vamos a intercambiar los códigos que crearon para que otro equipo pueda usarlo y organizar los dulces del Rey Dulce. ¡Vamos a intercambiar los códigos y empezar a construir!" },
+            { "step": 2, "time": { "30": 7, "40": 7, "50": 10 }, "accion": "Reproduce la DIAPOSITIVA 18 'Challenge de Reconocimiento de Patrones K1', entrega los códigos a los equipos y guía la construcción.", "dialogo": "¡Vamos, CODE SQUAD! Usen el código que recibieron y sigan el patrón. ¡Vamos a ver cuán bien pueden organizar los dulces en la mesa del Rey! Sigan el patrón que está en la pantalla y coloquen los bloques hasta que terminen. ¡Vamos a hacerlo juntos!" }
+        ],
+        "7": [
+            { "step": 1, "time": { "30": 3, "40": 4, "50": 5 }, "accion": "Reproduce la DIAPOSITIVA 22 y explica el obstáculo a los Genios.", "dialogo": "¡CODE SQUAD! ¡Tenemos una emergencia! Justo cuando pensábamos que los dulces estaban listos para la fiesta, una ráfaga de viento los desordenó. ¡Oh no! Pero no se preocupen, el cuartel general nos ha enviado un nuevo código para resolverlo. ¡Vamos a calmarnos y a resolver este problema juntos!" },
+            { "step": 2, "time": { "30": 7, "40": 10, "50": 10 }, "accion": "Reproduce la DIAPOSITIVA 23 'Código de Rescate K1' y motiva a los Genios a seguir el nuevo código proyectado en la pantalla.", "dialogo": "En la pantalla, verán el 'Código de Rescate'. Este código nos dirá cómo organizar los dulces de nuevo para que la fiesta siga. Vamos a seguir el patrón con mucho cuidado y organizar todo antes de que se desordene otra vez. ¡Vamos a hacerlo juntos, CODE SQUAD!" }
+        ]
+    },
+    "K2": {
+        "5.2": [
+            { "step": 1, "time": { "30": 1, "40": 1, "50": 1 }, "accion": "Reproduce la Diapositiva 11 y explica el reto para los niños de 4 años.", "dialogo": "¡CODE SQUAD! El Rey Dulce necesita nuestra ayuda para organizar su mesa de dulces. Vamos a representar los dulces usando bloques con formas y colores. Por ejemplo, el dulce cuadrado tendrá dos bloques, uno rojo y otro blanco. Dibujen sus dulces y usen dos bloques de color para representarlos. ¡Vamos a ver qué tan bien pueden hacerlo!" },
+            { "step": 2, "time": { "30": 2, "40": 2, "50": 2 }, "accion": "Reproduce la Diapositiva 12, distribuye papel y colores para la actividad de codificación.", "dialogo": "Aquí tienen su papel y colores. Dibujen los dulces y asignenles dos bloques de color a cada uno. ¡Prepárense para ayudar al Rey Dulce a organizar su mesa de dulces!" },
+            { "step": 3, "time": { "30": 5, "40": 7, "50": 10 }, "accion": "Reproduce la Diapositiva 13, guía el proceso mientras los niños crean sus códigos visuales en parejas.", "dialogo": "¡Genios del CODE SQUAD! Dibujen los dulces y asignenles dos bloques de color. Cada forma necesita dos bloques. ¡Trabajen juntos y ayuden al Rey Dulce a organizar la mesa de la fiesta!" }
+        ],
+        "6": [
+            { "step": 1, "time": { "30": 2, "40": 2, "50": 2 }, "accion": "Reproduce la DIAPOSITIVA 19 y dirige a los Genios para que intercambien los códigos que hicieron.", "dialogo": "¡Excelente trabajo, CODE SQUAD! Ahora vamos a intercambiar los códigos que crearon para que otro equipo pueda usarlo y organizar los dulces del Rey Dulce. ¡Vamos a intercambiar los códigos y empezar a construir!" },
+            { "step": 2, "time": { "30": 7, "40": 7, "50": 10 }, "accion": "Reproduce la DIAPOSITIVA 20 'Challenge de Reconocimiento de Patrones K2', entrega los códigos a los equipos y guía la construcción.", "dialogo": "¡Vamos, CODE SQUAD! Usen el código que recibieron y sigan el patrón. ¡Vamos a ver cuán bien pueden organizar los dulces en la mesa del Rey! Sigan el patrón que está en la pantalla y coloquen los bloques hasta que terminen. ¡Vamos a hacerlo juntos!" }
+        ],
+        "7": [
+            { "step": 1, "time": { "30": 3, "40": 4, "50": 5 }, "accion": "Reproduce la DIAPOSITIVA 24 y explica el obstáculo a los Genios.", "dialogo": "¡CODE SQUAD! ¡Tenemos una emergencia! Justo cuando pensábamos que los dulces estaban listos para la fiesta, una ráfaga de viento los desordenó. ¡Oh no! Pero no se preocupen, el cuartel general nos ha enviado un nuevo código para resolverlo. ¡Vamos a calmarnos y a resolver este problema juntos!" },
+            { "step": 2, "time": { "30": 7, "40": 10, "50": 10 }, "accion": "Reproduce la DIAPOSITIVA 25 'Código de Rescate K2' y motiva a los Genios a seguir el nuevo código proyectado en la pantalla.", "dialogo": "En la pantalla, verán el 'Código de Rescate'. Este código nos dirá cómo organizar los dulces de nuevo para que la fiesta siga. Vamos a seguir el patrón con mucho cuidado y organizar todo antes de que se desordene otra vez. ¡Vamos a hacerlo juntos, CODE SQUAD!" }
+        ]
+    },
+    "K3": {
+        "5.3": [
+            { "step": 1, "time": { "30": 1, "40": 1, "50": 1 }, "accion": "Reproduce la Diapositiva 14 y explica el reto para los niños de 5 años.", "dialogo": "¡CODE SQUAD! El Rey Dulce necesita aún más ayuda para organizar su mesa de dulces. Vamos a representar cada dulce usando tres bloques de color. Por ejemplo, el dulce cuadrado tendrá tres bloques: uno rojo, uno blanco, y uno azul. Dibujen sus dulces y asignen tres bloques a cada uno. ¡Vamos a organizarlos juntos!" },
+            { "step": 2, "time": { "30": 2, "40": 2, "50": 2 }, "accion": "Reproduce la Diapositiva 15, distribuye papel y colores para la actividad de codificación.", "dialogo": "Aquí tienen su papel y colores. Dibujen los dulces y asignenles tres bloques de color a cada uno. ¡Es hora de ayudar al Rey Dulce!" },
+            { "step": 3, "time": { "30": 5, "40": 7, "50": 10 }, "accion": "Reproduce la Diapositiva 16, guía el proceso mientras los niños crean sus códigos visuales en parejas.", "dialogo": "¡Genios del CODE SQUAD! Dibujen los dulces y asignenles tres bloques de color. Cada forma necesita tres bloques. ¡Trabajen juntos y ayuden al Rey Dulce a organizar la fiesta!" }
+        ],
+        "6": [
+            { "step": 1, "time": { "30": 2, "40": 2, "50": 2 }, "accion": "Reproduce la DIAPOSITIVA 21 y dirige a los Genios para que intercambien los códigos que hicieron.", "dialogo": "¡Excelente trabajo, CODE SQUAD! Ahora vamos a intercambiar los códigos que crearon para que otro equipo pueda usarlo y organizar los dulces del Rey Dulce. ¡Vamos a intercambiar los códigos y empezar a construir!" },
+            { "step": 2, "time": { "30": 7, "40": 7, "50": 10 }, "accion": "Reproduce la DIAPOSITIVA 22 'Challenge de Reconocimiento de Patrones K3', entrega los códigos a los equipos uno a uno y que inicien a construir.", "dialogo": "¡Vamos, CODE SQUAD! Usen el código que recibieron para organizar los dulces en la mesa del Rey. Recuerden seguir el patrón que está en la pantalla. ¡Vamos a hacerlo juntos!" }
+        ],
+        "7": [
+            { "step": 1, "time": { "30": 3, "40": 4, "50": 5 }, "accion": "Reproduce la DIAPOSITIVA 26 y explica el obstáculo a los Genios.", "dialogo": "¡CODE SQUAD! ¡Tenemos una emergencia! Justo cuando pensábamos que los dulces estaban listos para la fiesta, una ráfaga de viento los desordenó. ¡Oh no! Pero no se preocupen, el cuartel general nos ha enviado un nuevo código para resolverlo. ¡Vamos a calmarnos y a resolver este problema juntos!" },
+            { "step": 2, "time": { "30": 7, "40": 10, "50": 10 }, "accion": "Reproduce la DIAPOSITIVA 27 'Código de Rescate K3' y motiva a los Genios a seguir el nuevo código proyectado en la pantalla.", "dialogo": "En la pantalla, verán el 'Código de Rescate'. Este código nos dirá cómo organizar los dulces de nuevo para que la fiesta siga. Vamos a seguir el patrón con mucho cuidado y organizar todo antes de que se desordene otra vez. ¡Vamos a hacerlo juntos, CODE SQUAD!" }
+        ]
+    }
+};
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+            "activity-5": true,
+            "activity-6": true,
+            "activity-7": steps[level]["7"].some(s => s.time[time] > 0),
+            "activity-8": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+        document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + step.time[time], 0);
+    }
+
+    updateContent();
+</script>
+
+
+
+
+</body>
+</html>
